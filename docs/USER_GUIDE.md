@@ -5,7 +5,7 @@ Esta guía te ayudará a utilizar todas las funcionalidades del sistema de gesti
 ## 🏠 **Página de Inicio**
 
 ### **Acceso al Sistema**
-- **URL:** `http://tu-dominio.com/parkovisko`
+- **URL:** `http://tu-dominio.com/ci4-parkovisko/public/`
 - **Navegador recomendado:** Chrome, Firefox, Safari, Edge (versiones recientes)
 
 ### **Funcionalidades Disponibles**

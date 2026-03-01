@@ -16,7 +16,7 @@ return [
     // Credenciales de Google OAuth
     'client_id' => 'TU_CLIENT_ID_AQUI',
     'client_secret' => 'TU_CLIENT_SECRET_AQUI',
-    'redirect_uri' => 'http://localhost/parkovisko/public/google_callback.php',
+    'redirect_uri' => 'http://localhost/ci4-parkovisko/public/google_callback.php',
     
     // Configuración de OAuth
     'oauth' => [

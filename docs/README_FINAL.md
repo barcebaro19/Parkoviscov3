@@ -112,7 +112,7 @@ parkovisko/
 5. **Configurar servicios** en la carpeta `config/`
 
 ### Acceso al Sistema
-- **URL**: `http://localhost/parkovisko/public/login.php`
+- **URL**: `http://localhost/ci4-parkovisko/public/login.php`
 - **Credenciales por defecto**: Verificar en la base de datos
 
 ## 🔧 Funcionalidades por Rol

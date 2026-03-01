@@ -187,7 +187,7 @@ php spark serve
    - Nginx: Configurar rewrite rules
 
 6. **Probar instalación**
-   - Acceder a `http://localhost/parkovisko`
+   - Acceder a `http://localhost/ci4-parkovisko/public/`
    - Verificar que todas las funcionalidades trabajen
 
 > 📖 **Para instalación detallada:** Ver [docs/INSTALLATION.md](docs/INSTALLATION.md)
@@ -269,7 +269,7 @@ define('SMTP_PORT', 587);
 ## 🚀 **Uso Rápido**
 
 ### **Acceso al Sistema**
-1. **URL:** `http://localhost/parkovisko`
+1. **URL:** `http://localhost/ci4-parkovisko/public/`
 2. **Credenciales por defecto:**
    - **Admin:** admin@quintanares.com / admin123
    - **Vigilante:** vigilante@quintanares.com / vigilante123

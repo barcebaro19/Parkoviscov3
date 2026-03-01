@@ -72,9 +72,9 @@ brew services start mysql
 #### **Opción A: Descarga Directa**
 1. **Descargar** el archivo ZIP del proyecto
 2. **Extraer** en la carpeta del servidor web:
-   - **XAMPP:** `C:\xampp\htdocs\parkovisko`
-   - **Linux:** `/var/www/html/parkovisko`
-   - **macOS:** `/usr/local/var/www/parkovisko`
+   - **XAMPP:** `C:\xampp\htdocs\ci4-parkovisko`
+   - **Linux:** `/var/www/html/ci4-parkovisko`
+   - **macOS:** `/usr/local/var/www/ci4-parkovisko`
 
 #### **Opción B: Git Clone**
 ```bash
@@ -249,7 +249,7 @@ Configurar virtual host en Nginx:
 server {
     listen 80;
     server_name tu-dominio.com;
-    root /var/www/html/parkovisko;
+    root /var/www/html/ci4-parkovisko/public;
     index index.php index.html;
 
     location / {
@@ -279,10 +279,10 @@ server {
 #### **Linux/macOS**
 ```bash
 # Configurar permisos de archivos
-sudo chown -R www-data:www-data /var/www/html/parkovisko
-sudo chmod -R 755 /var/www/html/parkovisko
-sudo chmod -R 777 /var/www/html/parkovisko/logs
-sudo chmod -R 777 /var/www/html/parkovisko/vendor/tecnickcom/tcpdf/cache
+sudo chown -R www-data:www-data /var/www/html/ci4-parkovisko
+sudo chmod -R 755 /var/www/html/ci4-parkovisko
+sudo chmod -R 777 /var/www/html/ci4-parkovisko/writable/logs
+sudo chmod -R 777 /var/www/html/ci4-parkovisko/vendor/tecnickcom/tcpdf/cache
 ```
 
 #### **Windows**
@@ -296,7 +296,7 @@ sudo chmod -R 777 /var/www/html/parkovisko/vendor/tecnickcom/tcpdf/cache
 #### **Pruebas Básicas**
 1. **Acceder al sistema:**
    ```
-   http://localhost/parkovisko
+   http://localhost/ci4-parkovisko/public/
    ```
 
 2. **Verificar página de inicio:**
@@ -353,8 +353,8 @@ sudo mv composer.phar /usr/local/bin/composer
 ### **Error: "Permission denied"**
 ```bash
 # Configurar permisos correctos
-sudo chown -R www-data:www-data /var/www/html/parkovisko
-sudo chmod -R 755 /var/www/html/parkovisko
+sudo chown -R www-data:www-data /var/www/html/ci4-parkovisko
+sudo chmod -R 755 /var/www/html/ci4-parkovisko
 ```
 
 ### **Error: "Database connection failed"**

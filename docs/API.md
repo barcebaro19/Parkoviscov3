@@ -6,7 +6,7 @@ Esta documentación describe todas las APIs disponibles en el sistema de gestió
 
 ### **Base URL**
 ```
-http://tu-dominio.com/parkovisko/
+http://tu-dominio.com/ci4-parkovisko/public/
 ```
 
 ### **Formato de Respuesta**

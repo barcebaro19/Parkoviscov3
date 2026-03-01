@@ -47,7 +47,7 @@ return [
 ```
 
 ### 5. Probar la configuración
-1. Ve a `http://localhost/parkovisko/test_twilio_sms.php`
+1. Ve a `http://localhost/ci4-parkovisko/public/test_twilio_sms.php`
 2. Verifica que la configuración sea válida
 3. Envía un SMS de prueba
 
