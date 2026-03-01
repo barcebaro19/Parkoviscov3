@@ -2108,7 +2108,7 @@ try {
             <div class="relative bg-white rounded-2xl shadow-lg p-8 animate__animated animate__fadeInDown max-h-[90vh] overflow-y-auto">
                 <button type="button" onclick="cerrarModalAgregarVehiculo()" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-2xl font-bold">&times;</button>
                 <h3 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center gap-2"><i class="fas fa-car"></i> Agregar Vehículo</h3>
-                <form id="formAgregarVehiculo" action="/parkovisko%20(2)/parkovisko/app/Controllers/vehiculo_controller.php" method="POST" class="space-y-4">
+                <form id="formAgregarVehiculo" action="../app/Controllers/vehiculo_controller.php" method="POST" class="space-y-4">
                     <input type="hidden" name="action" value="agregar_vehiculo">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -2189,7 +2189,7 @@ try {
             <div class="relative bg-white rounded-2xl shadow-lg p-8 animate__animated animate__fadeInDown max-h-[90vh] overflow-y-auto">
                 <button type="button" onclick="cerrarModalEditarVehiculo()" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-2xl font-bold">&times;</button>
                 <h3 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center gap-2"><i class="fas fa-edit"></i> Editar Vehículo</h3>
-                <form id="formEditarVehiculo" action="/parkovisko%20(2)/parkovisko/app/Controllers/vehiculo_controller.php" method="POST" class="space-y-4">
+                <form id="formEditarVehiculo" action="../app/Controllers/vehiculo_controller.php" method="POST" class="space-y-4">
                     <input type="hidden" name="action" value="editar_vehiculo">
                     <input type="hidden" name="id_vehiculo" id="editIdVehiculo" value="">
                     
@@ -2398,7 +2398,7 @@ try {
                 // Crear formulario temporal para enviar la solicitud de eliminación
                 const form = document.createElement('form');
                 form.method = 'POST';
-                form.action = '/parkovisko%20(2)/parkovisko/app/Controllers/vehiculo_controller.php';
+                form.action = '../app/Controllers/vehiculo_controller.php';
                 
                 const actionInput = document.createElement('input');
                 actionInput.type = 'hidden';

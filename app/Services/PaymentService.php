@@ -227,7 +227,7 @@ class PaymentService {
      * Obtener URL de redirección
      */
     private function obtenerRedirectUrl($pago_id) {
-        $baseUrl = 'http://localhost/parkovisko/public/confirmacion_pago.php';
+        $baseUrl = 'http://localhost/ci4-parkovisko/public/confirmacion_pago.php';
         return $baseUrl . '?pago_id=' . $pago_id;
     }
     
