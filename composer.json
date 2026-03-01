@@ -1,0 +1,11 @@
+{
+    "config": {
+        "disable-tls": true,
+        "secure-http": false,
+        "disable-tls-verify": true,
+        "schema-repo-auth": false
+    },
+    "require": {
+        "tecnickcom/tcpdf": "6.7"
+    }
+}

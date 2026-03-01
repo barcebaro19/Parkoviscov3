@@ -1,0 +1,76 @@
+# Archivos de configuración sensibles
+config/*_config.php
+!config/*_config.example.php
+
+# Logs
+storage/logs/*.log
+storage/logs/*.txt
+
+# Cache
+storage/cache/*
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Archivos de XAMPP
+xampp/
+htdocs/
+
+# Archivos de prueba y debug
+test_*.php
+debug_*.php
+*_test.php
+*_debug.php
+
+# Archivos de backup
+*.backup
+*.old
+
+# Archivos de sesión
+sess_*
+
+# Archivos de error
+error_log
+php_errors.log
+
+# Archivos de configuración local
+.env
+.env.local
+.env.production
+
+# Archivos de dependencias (si se agregan)
+node_modules/
+vendor/
+writable/
+!writable/.htaccess
+composer.lock
+
+# Archivos de base de datos
+*.sql
+*.db
+*.sqlite
+
+# Archivos de imágenes generadas
+storage/qr_images/*
+!storage/qr_images/.gitkeep
+
+# Backups locales
+_backup/
+
+# Archivos de documentación temporal
+docs/temp/
+docs/draft/
