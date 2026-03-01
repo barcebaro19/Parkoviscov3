@@ -59,7 +59,7 @@
                 </div>
             <?php endif; ?>
             
-            <form action="<?= site_url('auth/authenticate') ?>" method="post">
+            <form action="/auth/authenticate" method="post">
                 <?= csrf_field() ?>
                 <div class="mb-3">
                     <label for="cedula" class="form-label">Cédula</label>

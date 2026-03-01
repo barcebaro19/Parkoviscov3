@@ -9,7 +9,22 @@ class Auth extends BaseController
 {
     public function login()
     {
-        return redirect()->to(base_url('login.php'));
+        // Si ya está logueado, redirigir al dashboard correspondiente
+        if (session()->get('id')) {
+            $rol = session()->get('nombre_rol');
+            switch ($rol) {
+                case 'administrador':
+                    return redirect()->to('/administrador');
+                case 'vigilante':
+                    return redirect()->to('/vigilante');
+                case 'propietario':
+                    return redirect()->to('/propietario');
+                default:
+                    return redirect()->to('/login');
+            }
+        }
+        
+        return view('auth/login');
     }
 
     public function authenticate()
@@ -63,23 +78,23 @@ class Auth extends BaseController
             // Redirigir según el rol
             switch ($user['nombre_rol']) {
                 case 'administrador':
-                    log_message('info', 'Auth::authenticate redirect administrador -> /Administrador1.php');
-                    return redirect()->to(base_url('Administrador1.php'));
+                    log_message('info', 'Auth::authenticate redirect administrador -> /administrador');
+                    return redirect()->to('/administrador');
                 case 'vigilante':
-                    log_message('info', 'Auth::authenticate redirect vigilante -> /vigilante.php');
-                    return redirect()->to(base_url('vigilante.php'));
+                    log_message('info', 'Auth::authenticate redirect vigilante -> /vigilante');
+                    return redirect()->to('/vigilante');
                 case 'propietario':
-                    log_message('info', 'Auth::authenticate redirect propietario -> /usuario.php');
-                    return redirect()->to(base_url('usuario.php'));
+                    log_message('info', 'Auth::authenticate redirect propietario -> /propietario');
+                    return redirect()->to('/propietario');
                 default:
                     log_message('warning', 'Auth::authenticate unknown role={role}', [
                         'role' => (string) ($user['nombre_rol'] ?? ''),
                     ]);
-                    return redirect()->to(base_url('login.php?error=rol_no_valido'));
+                    return redirect()->to('/login?error=rol_no_valido');
             }
         } else {
             session()->setFlashdata('error', 'Usuario o contraseña incorrectos');
-            return redirect()->to(base_url('login.php?error=invalid'));
+            return redirect()->to('/login?error=invalid');
         }
     }
 
@@ -92,7 +107,7 @@ class Auth extends BaseController
         ]);
 
         if (! $email) {
-            return redirect()->to(base_url('login.php'));
+            return redirect()->to('/login');
         }
 
         $db = db_connect();
@@ -104,21 +119,22 @@ class Auth extends BaseController
 
         if (! $user) {
             log_message('warning', 'Auth::resetPassword email not found');
-            return redirect()->to(base_url('login.php?error=email_not_found'));
+            return redirect()->to('/login?error=email_not_found');
         }
 
-        $new_password = substr(md5(uniqid()), 0, 8);
-        $password_hash = substr(md5($new_password), 0, 8);
+        // Generar nueva contraseña temporal
+        $tempPassword = 'Temp' . rand(1000, 9999);
+        $hashedPassword = md5($tempPassword);
 
-        $db->table('usu_roles')
-            ->where('usuarios_id', (int) $user['id'])
-            ->update(['contraseña' => $password_hash]);
+        $db->table('usuarios')
+            ->where('email', $email)
+            ->update(['contrasena' => $hashedPassword]);
 
-        log_message('info', 'Auth::resetPassword updated password for userId={id}', [
-            'id' => (string) $user['id'],
+        log_message('info', 'Auth::resetPassword password reset for email={email}', [
+            'email' => (string) $email,
         ]);
 
-        return redirect()->to(base_url('login.php?success=password_reset'));
+        return redirect()->to('/login?success=password_reset');
     }
 
     public function logout()
@@ -131,6 +147,6 @@ class Auth extends BaseController
 
         $_SESSION = [];
         session_destroy();
-        return redirect()->to(base_url('login.php'));
+        return redirect()->to('/login');
     }
 }
